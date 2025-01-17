@@ -8,7 +8,6 @@ import random #random number generator, draw new basis vector
 
 def drawall(*args): #redraw all interfaces
     realspacedraw(); recipspacedraw(); settingsdraw()
-    return
 
 def addbasis(*args): #event for adding an atom in the base
     global basisvec, rad
@@ -16,7 +15,6 @@ def addbasis(*args): #event for adding an atom in the base
     basisvec = np.append(basisvec,newpos,axis=0) #add basis vector at random position
     rad = np.append(rad,tk.DoubleVar(root,1)) #add radius of new atom, default 1
     drawall()
-    return
 
 def removebasis(*args): #event for removing an atom in the base
     global basisvec, rad
@@ -24,7 +22,6 @@ def removebasis(*args): #event for removing an atom in the base
         basisvec = np.delete(basisvec,basisvec.shape[0]-1,0)
         rad = np.delete(rad,rad.shape[0]-1)
     drawall()
-    return
 
 def calcrecip(real): #calculate reciprocal lattice vectors
     rot = np.array([[0,-1],[1,0]]) #90 deg rotation matrix
@@ -93,7 +90,6 @@ def realspacedraw(*args): #(re)draw real space lattice
         
         for i in range(-50,51): #try to draw 100 lines
             real_frame.create_line((mid-endpt[0]+i*shift[0], mid+endpt[1]-i*shift[1], mid+endpt[0]+i*shift[0], mid-endpt[1]-i*shift[1]), fill='black', width='2')
-    return
 
 def recipspacedraw(*args): #(re)draw reciprocal space
     gridsize = 5 #(half)size of grid crosses
@@ -268,8 +264,6 @@ def settingsdraw(*args):
     B_include_ff.grid(sticky='w', column=0, row=3)
     #B_include_ff_tt = Pmw.Balloon(root)
     #B_include_ff_tt.bind(B_include_ff,'Include form factors by taking the atom radius into account')
-    
-    return
 
 def main(): #main function to loop
     global root
