@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Copyright (C) 2021-2022 Jelle van Mil, Romaly Grijpma.
-This program belongs to the study program for Technische Natuurkunde and Applied Physics at the University of Twente.
-The program is not to be distributed by any other than the aforementioned, unless explicit permission is given.
-Modification of the code is permitted for personal use, but cannot be re-distributed.
-"""
 import numpy as np #numerical physics package
 import tkinter as tk #GUI package
 from tkinter import ttk
